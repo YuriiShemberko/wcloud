@@ -5,7 +5,6 @@
 
 enum EPattern
 {
-    Pattern_Null,
     Pattern_Rectangle,
     Pattern_Circle,
     Pattern_Cloud,
@@ -16,7 +15,7 @@ enum EPattern
 class CSettings
 {
 public:
-    CSettings(){ m_pattern = Pattern_Null; }
+    CSettings(){ m_pattern = Pattern_Rectangle; }
 
 private:
     EPattern m_pattern;

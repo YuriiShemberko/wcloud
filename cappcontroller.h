@@ -18,12 +18,14 @@ public:
 
 public slots:
     void OnSceneClicked( QPointF point );
+    void OnSceneHover( QPointF point );
     void OnClearRequested();
     void OnGenerateRequested();
 
     void OnCirclePatternRequested();
     void OnRectPatternRequested();
     void OnCloudPatternRequested();
+    void OnSaveToFileRequested();
 
 private:
     CSettings m_settings;

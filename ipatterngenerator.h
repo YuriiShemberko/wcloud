@@ -8,13 +8,21 @@
 class IPatternGenerator
 {
 public:
-    virtual void GeneratePattern( QGraphicsScene* scene ) = 0;
+    virtual void GeneratePattern() = 0;
     virtual void BorderPointAdded( QPointF point ) = 0;
+    virtual void BorderPointPreview( QPointF point ) = 0;
+    virtual void SetScene( QGraphicsScene* scene )
+    {
+        m_scene = scene;
+    }
+
+protected:
+    QGraphicsScene* m_scene;
 };
 
 class CNullPatternGenerator : public IPatternGenerator
 {
-private:
+protected:
     CNullPatternGenerator() {}
 public:
     static CNullPatternGenerator* Instance()
@@ -22,8 +30,9 @@ public:
         static CNullPatternGenerator instance;
         return &instance;
     }
-    virtual void GeneratePattern(QGraphicsScene*) override {}
-    virtual void BorderPointAdded(QPointF) override {}
+    virtual void GeneratePattern() override {}
+    virtual void BorderPointAdded( QPointF ) override {}
+    virtual void BorderPointPreview( QPointF ) override {}
 };
 
 #endif // IPATTERNGENERATOR_H

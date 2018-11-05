@@ -27,11 +27,13 @@ protected:
 
 signals:
     void graphicsSceneClicked( QPointF pos );
+    void graphicsSceneHover( QPointF pos );
     void buttonClearClicked();
     void buttonRectClicked();
     void buttonCircleClicked();
     void buttonCloudClicked();
     void buttonGenerateClicked();
+    void saveToFileClicked();
 };
 
 #endif // MAINWINDOW_H
