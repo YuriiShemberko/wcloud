@@ -22,11 +22,12 @@ void CAppController::ConnectToGui(CMainWindow *mw)
     connect( mw, SIGNAL( saveToFileClicked() ),             this,    SLOT( OnSaveToFileRequested() ) );
 
     m_gui = mw;
+    ResetGenerator( m_settings.GetPattern() );
 }
 
 void CAppController::OnGenerateRequested()
 {
-    m_generator->GeneratePattern();
+    m_generator->GeneratePattern( m_gui->Text() );
 }
 
 void CAppController::OnSceneClicked( QPointF point )
@@ -37,11 +38,6 @@ void CAppController::OnSceneClicked( QPointF point )
 void CAppController::OnClearRequested()
 {
     ResetGenerator( m_settings.GetPattern() );
-
-    if( !m_gui->Scene()->items().empty() )
-    {
-        m_gui->Scene()->clear();
-    }
 }
 
 void CAppController::OnCirclePatternRequested()
@@ -115,6 +111,12 @@ void CAppController::ResetGenerator( EPattern pattern )
         default:
             m_generator = CNullPatternGenerator::Instance();
         break;
+    }
+
+
+    if (!m_gui->Scene()->items().empty())
+    {
+        m_gui->Scene()->clear();
     }
 
     m_generator->SetScene(m_gui->Scene());

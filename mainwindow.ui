@@ -18,7 +18,7 @@
     <item row="2" column="0">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QGraphicsView" name="picture_preview_area"/>
+       <widget class="CPreviewArea" name="picture_preview_area"/>
       </item>
      </layout>
     </item>
@@ -124,6 +124,13 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CPreviewArea</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">cpreviewarea.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

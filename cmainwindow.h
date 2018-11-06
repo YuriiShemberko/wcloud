@@ -17,13 +17,13 @@ public:
     ~CMainWindow();
 
     QGraphicsScene* Scene();
+    QString Text();
 
 private:
     Ui::MainWindow *ui;
 
-protected:
-    virtual bool eventFilter( QObject *obj, QEvent *ev ) override;
-
+private slots:
+    void OnTextChanged( QString text );
 
 signals:
     void graphicsSceneClicked( QPointF pos );

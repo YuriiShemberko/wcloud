@@ -28,7 +28,8 @@ SOURCES += \
     crectanglepatterngenerator.cpp \
     csettings.cpp \
     cappcontroller.cpp \
-    cmainwindow.cpp
+    cmainwindow.cpp \
+    cpreviewarea.cpp
 
 HEADERS += \
     ipatterngenerator.h \
@@ -36,7 +37,8 @@ HEADERS += \
     crectanglepatterngenerator.h \
     csettings.h \
     cappcontroller.h \
-    cmainwindow.h
+    cmainwindow.h \
+    cpreviewarea.h
 
 FORMS += \
         mainwindow.ui
